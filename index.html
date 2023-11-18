@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/4e3895d11d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="bg-[#ffffff] z-20 fixed top-0 left-0 w-full shadow-sm">
+        <nav class="flex justify-between items-center w-[92%] mx-auto py-6">
+            <div>
+                <img src="/images/Logo.svg" class="w-[60%]" alt="">
+            </div>
+            <div class="nav-links md:static fixed md:min-h-fit min-h-[90vh] left-0 top-20 -translate-x-full md:translate-x-0 md:w-auto w-full flex items-center px-5 transform transition-transform duration-300 ease-in-out bg-[#ffffff] lg:shadow-none shadow-2xl">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 lg:mt-0 md:mt-0 -mt-28">
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Home</a>
+                    </li>
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Pages</a>
+                    </li>
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Services</a>
+                    </li>
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Project</a>
+                    </li>
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Blog</a>
+                    </li>
+                    <li>
+                        <a class="text-[#292F36] hover:text-[#CDA274] transition ease-out duration-500 text-lg lg:font-medium" href="#!">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="gap-6">
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <div class=" relative bg-cover bg-current h-screen" style="background-image: url(/images/Image.png);">
+            <div class="container">
+                <div class="absolute inset-0 top-64 items-center lg:p-24 p-10">
+                    <h1 class="text-[#292F36] lg:text-6xl text-4xl font-medium">
+                        Let Your Home Be Unique
+                    </h1>
+                    <h3 class="lg:text-2xl text-lg text-[#4D5053] mt-3">
+                        There are many variations of the passages of <br> lorem Ipsum fromavailable,variations of the passages.
+                    </h3>
+                    <div class="mt-6">
+                        <a href="#!" class="bg-[#292F36] text-[#FFFFFF] p-3 text-lg font-medium rounded-lg">Get Started <i class="fa-solid fa-arrow-right fa-sm" style="color: #cda274;"></i></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <!-- Implement the Back Top Top Button -->
+    <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+    class="hidden fixed z-90 bottom-8 right-8 border-0 lg:w-16 w-10 lg:h-16 h-10 rounded-full drop-shadow-md bg-[##CDA274] text-white lg:text-3xl text-xl font-bold">&uarr;</button>
+    </div>
+</body>
+<script>
+    const navlinks = document.querySelector('.nav-links')
+        function onToggleMenu(e){
+             e.name = e.name === 'close' ? 'menu' : 'close' 
+             navlinks.classList.toggle('-translate-x-full')
+         }
+
+
+         var toTopButton = document.getElementById("to-top-button");
+
+        // When the user scrolls down 200px from the top of the document, show the button
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+</script>
+</html>
